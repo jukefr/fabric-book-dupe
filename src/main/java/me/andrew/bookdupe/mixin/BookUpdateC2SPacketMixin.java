@@ -16,25 +16,25 @@ public abstract class BookUpdateC2SPacketMixin {
     private static final String str1;
     private static final String str2 = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
     @Shadow
-    private ItemStack field_12863;
+    private ItemStack book;
     
     @Inject(at = { @At("RETURN") }, method = { "<init>(Lnet/minecraft/item/ItemStack;ZI)V" })
     public void onInit(final ItemStack book, final boolean signed, final int slot, final CallbackInfo ci) {
         System.out.println("CALLED");
         if (signed && book.getTag().getList("pages", 8).getString(0).equals("DUPE")) {
             final ListTag listTag = new ListTag();
-            listTag.set(0, (Tag)StringTag.of(BookUpdateC2SPacketMixin.str1));
+            listTag.addTag(0, (Tag)StringTag.of(BookUpdateC2SPacketMixin.str1));
             for (int i = 1; i < 38; ++i) {
-                listTag.set(i, (Tag)StringTag.of("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"));
+                listTag.addTag(i, (Tag)StringTag.of("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"));
             }
-            this.field_12863.putSubTag("pages", (Tag)listTag);
+            this.book.putSubTag("pages", (Tag)listTag);
         }
     }
     
     static {
         final StringBuilder stringBuilder = new StringBuilder();
         for (int i = 0; i < 21845; ++i) {
-            stringBuilder.append('\u0800');
+            stringBuilder.append('ࠀ');
         }
         str1 = stringBuilder.toString();
     }

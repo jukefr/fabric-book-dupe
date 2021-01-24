@@ -1,9 +1,18 @@
-# Fabric Example Mod
+# fabric-book-dupe
 
-## Setup
+## Usage
 
-For setup instructions please see the [fabric wiki page](https://fabricmc.net/wiki/tutorial:setup) that relates to the IDE that you are using.
+1. Put items you want to dupe in your inventory.
+2. Log out to force save server side.
+3. Log back in
+4. Place items in chest
+5. Hold book and quill
+6. Type `kekdupe` in chat
+7. Log back in
+8. ??????
+9. Profit
 
 ## License
 
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+The reversed jar had no license inside it and I cannot find any information on the original creator appart from that he uses the alias "andrew_10_" so ¯\_(ツ)_/¯
+

@@ -21,10 +21,10 @@ public abstract class ClientPlayerEntityMixin {
     
     @Inject(at = { @At("HEAD") }, method = { "sendChatMessage" }, cancellable = true)
     public void onChatMessage(final String message, final CallbackInfo ci) {
-        if (message.equals(".d")) {
+        if (message.equals("kekdupe")) {
             final ItemStack itemStack = new ItemStack((ItemConvertible)Items.WRITABLE_BOOK, 1);
             final ListTag pages = new ListTag();
-            pages.add(0, (Tag)StringTag.of("DUPE")); // probable .set/.add
+            pages.addTag(0, (Tag)StringTag.of("DUPE"));
             itemStack.putSubTag("pages", (Tag)pages);
             itemStack.putSubTag("title", (Tag)StringTag.of("a"));
             ClientPlayerEntityMixin.mc.getNetworkHandler().sendPacket((Packet)new BookUpdateC2SPacket(itemStack, true, ClientPlayerEntityMixin.mc.player.inventory.selectedSlot));
