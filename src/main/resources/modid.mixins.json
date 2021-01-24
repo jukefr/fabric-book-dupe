@@ -1,12 +1,14 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "net.fabricmc.example.mixin",
+  "package": "me.andrew.bookdupe.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
   ],
+  "refmap": "BookDupe-refmap.json",
   "client": [
-    "ExampleMixin"
+    "BookUpdateC2SPacketMixin",
+    "ClientPlayerEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -1,0 +1,20 @@
+{
+  "mappings": {
+    "me/andrew/bookdupe/mixin/ClientPlayerEntityMixin": {
+      "sendChatMessage": "Lnet/minecraft/class_746;method_3142(Ljava/lang/String;)V"
+    },
+    "me/andrew/bookdupe/mixin/BookUpdateC2SPacketMixin": {
+      "\u003cinit\u003e(Lnet/minecraft/item/ItemStack;ZI)V": "Lnet/minecraft/class_2820;\u003cinit\u003e(Lnet/minecraft/class_1799;ZI)V"
+    }
+  },
+  "data": {
+    "named:intermediary": {
+      "me/andrew/bookdupe/mixin/ClientPlayerEntityMixin": {
+        "sendChatMessage": "Lnet/minecraft/class_746;method_3142(Ljava/lang/String;)V"
+      },
+      "me/andrew/bookdupe/mixin/BookUpdateC2SPacketMixin": {
+        "\u003cinit\u003e(Lnet/minecraft/item/ItemStack;ZI)V": "Lnet/minecraft/class_2820;\u003cinit\u003e(Lnet/minecraft/class_1799;ZI)V"
+      }
+    }
+  }
+}
